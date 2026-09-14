@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Music Server - Wilmer Bailon</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+
+            <a class="logo" href="index.html">← Back to main</a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+            <h1>
+                Personal Music Server
+            </h1>
+        </section>
+
+        <section>
+
+            <div class="section-content">
+                <p>
+                    This project uses an old computer with <strong>Linux</strong> as a personal music server. It stores the music locally and lets me play it from different devices.
+                </p>
+                <p>
+                    It uses <strong>Docker</strong> to run Jellyfin and <strong>Tailscale</strong> for remote access without opening Jellyfin directly to the Internet.
+                </p>
+
+                <h2>Features</h2>
+                <ul>
+                    <li>Local music library.</li>
+                    <li>Jellyfin to organize and play music.</li>
+                    <li>Access from a phone, computer, and other devices.</li>
+                    <li>Remote access with Tailscale.</li>
+                    <li>Jellyfin running in Docker.</li>
+                    <li>Jellyfin automatically manages music information and covers.</li>
+                    <li>Port 8096 does not need to be open to the Internet.</li>
+                </ul>
+
+                <h2>Technologies</h2>
+                <p>
+                    <strong>Linux</strong> as the operating system, <strong>runit</strong> for managing services, <strong>Docker</strong> to run Jellyfin, <strong>Jellyfin</strong> as the music server, and <strong>Tailscale</strong> for remote access.
+                </p>
+
+                <h2>Music Library</h2>
+                <p>
+                    The music is stored in:
+                </p>
+                <pre><code>/home/ftpuser/ftp/cliente</code></pre>
+                <p>
+                    Docker mounts this folder in Jellyfin as:
+                </p>
+                <pre><code>/media</code></pre>
+                <p>
+                    Jellyfin uses <strong>/media</strong> as the music library folder.
+                </p>
+
+                <h2>Jellyfin</h2>
+                <p>
+                    Jellyfin runs in Docker and uses port:
+                </p>
+                <pre><code>8096</code></pre>
+                <p>To check if it is running:</p>
+                <pre><code>sudo docker ps
+curl http://127.0.0.1:8096</code></pre>
+
+                <h2>Remote Access</h2>
+                <p>
+                    Tailscale lets me access the server from devices that are connected to my Tailscale network.
+                </p>
+                <p>To see the server's Tailscale IP:</p>
+                <pre><code>tailscale ip</code></pre>
+                <p>To see the connected devices:</p>
+                <pre><code>tailscale status</code></pre>
+                <p>Jellyfin can be accessed from another device using:</p>
+                <pre><code>http://TAILSCALE-IP:8096</code></pre>
+
+                <h2>Security</h2>
+                <p>
+                    Port <strong>8096</strong> is not exposed directly to the Internet.
+                </p>
+                <p>
+                    Tailscale is used to connect the server and the authorized devices privately.
+                </p>
+
+                <img src="images/Servermusic.png" alt="Music server preview" style="width: 100%; max-width: 800px; border-radius: 8px; margin-top: 20px;">
+            </div>
+
+        </section>
+
+    </main>
+</body>
+
+</html>

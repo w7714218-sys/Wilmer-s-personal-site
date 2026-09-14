@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>This Website - Wilmer Bailon</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+
+            <a class="logo" href="index.html">← Back to main</a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+            <h1>
+                ClayForge-Vase Generator
+            </h1>
+        </section>
+
+        <section>
+
+            <div class="section-content">
+                <p>
+                    Hi! I made ClayForge because I wanted an easy way to design vases for 3D printing. Instead of dealing with complex 3D modelling, you just draw a 2D profile and it generates the vase in real-time.
+                </p>
+                <p>
+                    ClayForge is a browser-based vase generator built with Three.js. It lets you shape a vase interactively and export the result as an STL file for 3D printing.
+                </p>
+
+                <p>
+                    <a class="github-link" href="https://clayforge.dino.icu/" target="_blank" rel="noopener noreferrer">Try the live demo ↗</a>
+                </p>
+
+                <h2>Installation</h2>
+                <p>To run ClayForge locally, clone the repository, install its dependencies, and start the Vite development server:</p>
+                <pre><code>git clone https://github.com/w7714218-sys/ClayForge-Jar-project.git
+cd ClayForge-Jar-project/vase-generator
+npm install
+npm run dev</code></pre>
+                <p>Then open <a href="http://localhost:5173" target="_blank" rel="noopener noreferrer">http://localhost:5173</a> in your browser.</p>
+
+                <h2>Features</h2>
+                <ul>
+                    <li>Drag points to change the vase shape.</li>
+                    <li>Adjust the height, wall thickness, and resolution.</li>
+                    <li>Add spiral deformations to the design.</li>
+                    <li>Export the finished vase as an STL file for 3D printing.</li>
+                </ul>
+
+                <h2>Technologies</h2>
+                <p>ClayForge uses <strong>Three.js</strong> for 3D rendering, <strong>Vite</strong> for the development server, and standard <strong>HTML, CSS, and JavaScript</strong> for the interface.</p>
+
+                <p>
+                    <a href="https://github.com/w7714218-sys/ClayForge-Jar-project" target="_blank" rel="noopener noreferrer">View the project on GitHub ↗</a>
+                </p>
+                
+                <img src="images/Readme-clayforge.gif" alt="Website preview" style="width: 100%; max-width: 800px; border-radius: 8px; margin-top: 20px;">
+            </div>
+
+        </section>
+
+    </main>
+</body>
+
+</html>
