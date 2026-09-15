@@ -30,5 +30,8 @@ This website uses **HTML** for structure, **CSS** for design and layout, and **J
 
 ## Project Image
 
-![My personal website](images/Code-MYpersonalwebsite.png)
+![Personal music server](images/myownmusicserver.png)
 
+---
+
+This project is part of my personal portfolio and reflects my interest in self-hosting, home infrastructure, and media systems.
