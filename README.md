@@ -1,94 +1,34 @@
 # Wilmer's Personal Site
 
-This is my personal website where I showcase my recent projects and experiments.
+Hi! I built this personal website to share my work, projects, and ideas in one place. I wanted a simple portfolio where I could present what I’m creating and keep my work organized in a clean, easy-to-navigate format.
 
-## Personal Music Server
+This website is a lightweight portfolio built with HTML, CSS, and JavaScript. It gives me a space to showcase my projects, explain what I’m working on, and share my contact information with visitors.
 
-This project uses an old computer with **Linux** as a personal music server. It stores the music locally and lets me play it from different devices.
+## Installation
 
-It uses **Docker** to run Jellyfin and **Tailscale** for remote access without opening Jellyfin directly to the Internet.
-
-### Features
-
-- Local music library.
-- Jellyfin to organize and play music.
-- Access from a phone, computer, and other devices.
-- Remote access with Tailscale.
-- Jellyfin running in Docker.
-- Jellyfin automatically manages music information and covers.
-- Port 8096 does not need to be open to the Internet.
-
-### Technologies
-
-- **Linux** as the operating system.
-- **runit** for managing services.
-- **Docker** to run Jellyfin.
-- **Jellyfin** as the music server.
-- **Tailscale** for remote access.
-
-### Music Library
-
-The music is stored in:
+To run this website locally, clone the repository, open the project folder, and start a local web server:
 
 ```bash
-/home/ftpuser/ftp/cliente
+git clone https://github.com/your-username/your-portfolio.git
+cd your-portfolio
+python -m http.server 8000
 ```
 
-Docker mounts this folder in Jellyfin as:
+Then open http://localhost:8000 in your browser.
 
-```bash
-/media
-```
+## Features
 
-Jellyfin uses **/media** as the music library folder.
+- Clean and minimal portfolio layout.
+- Project cards with individual detail pages.
+- Responsive design for different screen sizes.
+- Contact section with GitHub and email links.
+- Simple structure that is easy to update and maintain.
 
-### Jellyfin
+## Technologies
 
-Jellyfin runs in Docker and uses port:
+This website uses **HTML** for structure, **CSS** for design and layout, and **JavaScript** for interactivity. The project is intentionally simple and lightweight so it remains easy to customize and expand over time.
 
-```bash
-8096
-```
+## Project Image
 
-To check if it is running:
+![My personal website](images/Code-MYpersonalwebsite.png)
 
-```bash
-sudo docker ps
-curl http://127.0.0.1:8096
-```
-
-### Remote Access
-
-Tailscale lets me access the server from devices that are connected to my Tailscale network.
-
-To see the server's Tailscale IP:
-
-```bash
-tailscale ip
-```
-
-To see the connected devices:
-
-```bash
-tailscale status
-```
-
-Jellyfin can be accessed from another device using:
-
-```bash
-http://TAILSCALE-IP:8096
-```
-
-### Security
-
-Port **8096** is not exposed directly to the Internet.
-
-Tailscale is used to connect the server and the authorized devices privately.
-
-### Project Image
-
-![Personal music server](images/myownmusicserver.png)
-
----
-
-This project is part of my personal portfolio and reflects my interest in self-hosting, home infrastructure, and media systems.
